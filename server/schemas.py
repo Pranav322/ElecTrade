@@ -12,11 +12,13 @@ class UserBase(BaseModel):
     email: str
     profile_image: Optional[str] = None
     user_status: str  
+    wallet_address: Optional[str] = None
 
 #3. required fields when creating a user
 #=======================================
 class CreateUser(UserBase):
     hashed_password: str
+    # wallet_address: Optional[str] = None 
 
     class Config:
         orm_mode = True

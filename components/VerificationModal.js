@@ -24,7 +24,7 @@ const VerificationModal = ({
   const buttonHandler = () => {
     if (successful) {
       //redirect the user to the log in screen
-      navigation.navigate('Home');
+      navigation.navigate('Login');
     }
     setModalVisible(false);
   };
@@ -69,7 +69,7 @@ const SuccessContent = ({ buttonHandler }) => {
         style={{ backgroundColor: COLORS.green, flexDirection: 'row' }}
         onPress={buttonHandler}
       >
-        <ButtonText>Continue to App</ButtonText>
+        <ButtonText>Continue to App and Login</ButtonText>
         <Ionicons name='arrow-forward-circle' size={25} color={COLORS.white} />
       </StyledButton>
     </ModalView>

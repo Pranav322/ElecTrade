@@ -11,6 +11,9 @@ import DrawerNavigator from './navigators/DrawerNavigator';
 import { CredentialsContext } from './contexts/CredentialsContext';
 import { WishListDataContext } from './contexts/WishListDataContext';
 
+
+
+
 export default function App() {
   //check if the app is ready using this state. Initial is false
   //this is to monitor our app readiness

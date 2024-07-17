@@ -25,6 +25,9 @@ class User(Base):
     user_status = sql.Column(sql.String(255), nullable=False)
     date_created =sql.Column(sql.DateTime, default=dt.datetime.utcnow, nullable=False)
     
+    wallet_address = sql.Column(sql.String(255), nullable=True)
+
+    
     
     #3.2 check the password we sent for authentication vs the password stored in the DB
     #=====================================================================================

@@ -19,7 +19,7 @@ const HomeHeader = ({ onSearch, navigation, searchBarPlaceHolderText }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerText}>NFT Market Place</Text>
+        <Text style={styles.headerText}>ElecTrade</Text>
         <View style={styles.imageContainer}>
           <Pressable onPress={() => navigation.openDrawer()}>
             <PageLogo

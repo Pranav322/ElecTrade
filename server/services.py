@@ -45,10 +45,19 @@ async def get_otp_by_email(email: str, otp: int, db: orm.Session):
 #7. create a new user
 #====================
 async def create_user(user: schemas.CreateUser, db: orm.Session):
-    user_obj = models.User(first_name= user.first_name,last_name= user.last_name,email=user.email, profile_image = "", user_status= "UNVERIFIED", hashed_password= hash.bcrypt.hash(user.hashed_password))  
+    user_obj = models.User(
+        first_name=user.first_name,
+        last_name=user.last_name,
+        email=user.email,
+        profile_image="",
+        user_status="UNVERIFIED",
+        hashed_password=hash.bcrypt.hash(user.hashed_password),
+        wallet_address=user.wallet_address  # Store wallet address
+    )
     db.add(user_obj)
     db.commit()
     db.refresh(user_obj)
+
 
 
 #8. delete an existing one time pin before creating another one
@@ -74,7 +83,7 @@ async def create_otp(email:str, db: orm.Session):
         db.add(otp_obj)
         db.commit()
         db.refresh(otp_obj)
-        
+         
         return new_otp
 
 #10. sends emails to the user

@@ -31,7 +31,7 @@ async def create_user(user: schemas.CreateUser, db: orm.Session = fastapi.Depend
     otp_code = await services.create_otp(user.email,db)
 
     subject = "Account Created Successfully"
-    body = 'Hi! Welcome to NFT Market Place. Your account verification OTP code is: ' + str(otp_code) + '.\nPlease use it to activate your account 😜.'
+    body = 'Hi! Welcome to ElecTrade. Your account verification OTP code is: ' + str(otp_code) + '.\nPlease use it to activate your account 😜.'
 
     email_status = await services.send_email_async(subject, user.email, body)
 
@@ -279,3 +279,6 @@ async def place_bid(bid: schemas.PlaceBid,current_user:schemas.User = fastapi.De
 async def get_users_wish_list(user_ip_address: str, db: orm.Session = fastapi.Depends(services.get_db)):
     wish_list_nft_count = await services.count_nfts_in_users_wish_list(user_ip_address=user_ip_address,db=db)
     return dict(wish_list_nft_count=wish_list_nft_count, status="SUCCESS")
+
+
+#18. register as seller api

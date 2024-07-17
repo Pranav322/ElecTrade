@@ -76,7 +76,7 @@ const ResetPasswordRequest = ({ navigation }) => {
             <FocusedStatusBar background={COLORS.primary}/>
             <InnerContainer>
                 <PageLogo resizeMode="cover" source={require("./../assets/images/nft-login-image.png")}/>
-                <PageTitle>NFT Market Place</PageTitle>
+                <PageTitle>ElecTrade</PageTitle>
                 <SubTitle>Request Password Reset</SubTitle>
                 
               <Formik
